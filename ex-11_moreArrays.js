@@ -28,17 +28,23 @@ console.log(includes(numbers,+3));
 Exclude the numbers you passed to the function  from numbers array
 result will be [3, 4]
 */
-const except = (array, excluded) => {
-    let arr = []
-    for(let i in array){
-        if(array[i] === excluded[i]){
-            return array.slice(i+2);
-        }
-    }
+
+function except(array, excluded) {
+    //Easy Solution
+    // const exceptArr = []
+    // for(let i of array){
+    //     if(!excluded.includes(i)){
+    //         exceptArr.push(i)
+    //     }
+    // }
+    // return exceptArr
+
+    //Another Solution
+    return (array.filter((item) => !excluded.includes(item)));
 }
-const numbers2 = [1,2,3,4,];
-const output = except(numbers2,[1,2]);
-console.log(output);
+const num = [1,2,3,4];
+const out = except(num,[1,2]);
+console.log(out);
 
 /*Exercise-4
 ==============================================
